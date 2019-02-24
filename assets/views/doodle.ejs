@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="doodle-id" content="<%= id %>">
+    <title id="title">
+        <%= title %>
+    </title>
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../css/brush.css">
+    <link rel="stylesheet" type="text/css" href="../css/icon.css">
+    <link rel="stylesheet" type="text/css" href="../css/toast.css">
+    <link rel="stylesheet" type="text/css" href="../css/loading.css">
+    <link rel="stylesheet" type="text/css" href="../css/canvas.css">
+    <link rel="stylesheet" type="text/css" href="../css/button.css">
+    <link rel="stylesheet" type="text/css" href="../css/slider.css">
+    <link rel="stylesheet" type="text/css" href="../css/colorpicker.css">
+</head>
+
+<body>
+    <div class="top-bar container">
+        <div id="canvas-title" contenteditable="true">
+            <%= title %>
+        </div>
+    </div>
+    </div>
+    <a class="back-btn icon-back" href="/" title="返回上一页"></a>
+
+    <div class="canvas-display">
+        <div id="canvas-container" class="canvas-container">
+            <canvas id="canvas"></canvas>
+            <div id="brush" class="brush"></div>
+            <div id="canvas-mask" class="canvas-mask">
+                <div class="canvas-masktip">
+                    <span class="loading icon-spinner2"></span> 加载中
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layout-restful-corner">
+        <div class="restful-btn">
+            <a id="saveBtn" href="#" class="btn btn-sm green">
+                <span class="icon-box-add"></span>保存
+            </a>
+        </div>
+        <div class="restful-btn">
+            <a id="downloadBtn" href="#" class="btn btn-sm blue">
+                <span class="icon-download3"></span>下载
+            </a>
+        </div>
+        <div class="restful-btn">
+            <a id="removeBtn" href="#" class="btn btn-sm red">
+                <span class="icon-remove"></span>删除
+            </a>
+        </div>
+    </div>
+
+    <div class="layout-brush-corner">
+        <div class="brush-setting">
+            <input type="radio" name="brush-type" value="eraser" />橡皮
+            <input type="radio" checked="checked" name="brush-type" value="brush" />画笔
+
+        </div>
+        <div class="brush-setting">笔触大小：<input id="brush-size" class="slider" /></div>
+    </div>
+
+    <div class="layout-color-corner">
+        <input id="colorpicker" />
+    </div>
+</body>
+
+</html>
+<script src="../js/jquery.js"></script>
+<script src="../js/axios.js"></script>
+<script src="../js/toast.js"></script>
+<script src="../js/brush.js"></script>
+<script src="../js/canvas.js"></script>
+<script src="../js/slider.js"></script>
+<script src="../js/colorpicker.js"></script>
+<script>
+    brush.init();
+    canvas.init(brush);
+
+    $("#brush-size").slider({
+        min: 0,
+        max: 100,
+        step: 1,
+        value: 10,
+    }).on('change', (data) => {
+        brush.setSize(data.value.newValue);
+    });
+
+    $('input[name="brush-type"').change((e) => {
+        brush.setType($('input[name="brush-type"]:checked').val());
+    });
+
+    $('#colorpicker').colorpicker({
+        color: 'rgba(0,0,0,1)',
+        inline: true,
+        align: 'left',
+        container: ".layout-color-corner"
+    }).on('change', (e) => {
+        brush.setColor(e.value);
+    });
+
+
+    $("#saveBtn").click(canvas.upload);
+    $("#downloadBtn").click(canvas.download);
+    $("#removeBtn").click(canvas.remove);
+</script>

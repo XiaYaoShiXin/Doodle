@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在线画图工具-by 15222503侯志琨</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/icon.css">
+    <link rel="stylesheet" type="text/css" href="../css/card.css">
+
+    <style>
+        body {
+            background-color: white;
+        }
+        
+        h1 {
+            padding: 0 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>画图工具</h1>
+    <div class="card-container">
+        <a class="card" id="createBtn">
+            <span class="card-icon icon-create"></span>
+        </a>
+        <% for(let i in doodles) { %>
+            <a class="card" href="/doodle/<%= doodles[i]._id %>">
+                <div class="card-title">
+                    <%= doodles[i].title %>
+                </div>
+                <% if(doodles[i].dataUrl!=null){ %>
+                    <img class="card-img" src="<%= doodles[i].dataUrl %>" />
+                    <% } %>
+            </a>
+            <% } %>
+    </div>
+
+
+</body>
+<script src="../js/jquery.js"></script>
+<script src="../js/axios.js"></script>
+<script src="../js/toast.js"></script>
+<script src="../js/create.js"></script>
+
+</html>
+<script>
+    $("#createBtn").click(create);
+</script>

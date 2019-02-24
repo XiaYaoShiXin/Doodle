@@ -1,0 +1,71 @@
+.top-bar {
+    background-color: #f7f7f7;
+    height: 75px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+    border-bottom: 1px solid #aaaaaa;
+    z-index: 1;
+}
+
+.back-btn {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 36px;
+    z-index: 1;
+    color: black;
+    transition: all .2s linear;
+}
+
+.back-btn:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.back-btn:focus {
+    text-decoration: none;
+}
+
+.layout-restful-corner,
+.layout-setting-corner {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.restful-btn {
+    margin-bottom: 10px;
+}
+
+.layout-brush-corner {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 200px;
+}
+
+.layout-color-corner {
+    position: absolute;
+    top: 85px;
+    left: 20px;
+    width: 200px;
+}
+
+#colorpicker {
+    display: none;
+}
+
+.brush-setting {
+    font-size: 18px;
+    font-weight: bolder;
+    margin-top: 10px;
+}
+
+input[name="brush-type"] {
+    margin-left: 10px;
+}

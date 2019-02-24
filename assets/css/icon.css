@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?11auvn');
+    src: url('../fonts/icomoon.eot?11auvn#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?11auvn') format('truetype'), url('../fonts/icomoon.woff?11auvn') format('woff'), url('../fonts/icomoon.svg?11auvn#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-folder-download:before {
+    content: "\e933";
+}
+
+.icon-folder-upload:before {
+    content: "\e934";
+}
+
+.icon-box-add:before {
+    content: "\e95e";
+}
+
+.icon-box-remove:before {
+    content: "\e95f";
+}
+
+.icon-hour-glass:before {
+    content: "\e979";
+}
+
+.icon-spinner:before {
+    content: "\e97a";
+}
+
+.icon-spinner2:before {
+    content: "\e97b";
+}
+
+.icon-spinner3:before {
+    content: "\e97c";
+}
+
+.icon-spinner6:before {
+    content: "\e97f";
+}
+
+.icon-spinner7:before {
+    content: "\e980";
+}
+
+.icon-spinner9:before {
+    content: "\e982";
+}
+
+.icon-spinner10:before {
+    content: "\e983";
+}
+
+.icon-remove:before {
+    content: "\e9ac";
+}
+
+.icon-download2:before {
+    content: "\e9c5";
+}
+
+.icon-upload2:before {
+    content: "\e9c6";
+}
+
+.icon-download3:before {
+    content: "\e9c7";
+}
+
+.icon-upload3:before {
+    content: "\e9c8";
+}
+
+.icon-create:before {
+    content: "\ea0a";
+}
+
+.icon-back:before {
+    content: "\ea40";
+}

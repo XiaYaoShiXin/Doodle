@@ -1,0 +1,58 @@
+.canvas-display {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    overflow: hidden;
+    background-color: #bbbbbb;
+}
+
+.canvas-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1000px;
+    height: 500px;
+    transform: translateX(-50%) translateY(-50%);
+    box-sizing: content-box;
+}
+
+.canvas-mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 1000px;
+    height: 500px;
+    background-color: black;
+    opacity: 1;
+    transition: all 1s linear;
+    line-height: 100%;
+    color: white;
+}
+
+.canvas-masktip {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 100px;
+}
+
+canvas {
+    background-color: #bbbbbb;
+    cursor: none;
+    opacity: 0;
+    transition: all 1s linear;
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+}
+
+#canvas-title {
+    margin: 12px 0;
+    height: 51px;
+    padding: 0 12px;
+    line-height: 51px;
+    font-size: 24px;
+}

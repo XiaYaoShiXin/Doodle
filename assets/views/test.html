@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/colorpicker.css">
+
+    <style>
+        .corner {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+        
+        #colorpicker {
+            display: none;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="corner">
+        <input id="colorpicker" />
+    </div>
+</body>
+
+</html>
+<script src="../js/jquery.js"></script>
+<script src="../js/colorpicker.js"></script>
+<script>
+    $(function() {
+        $('#colorpicker').colorpicker({
+            color: 'rgba(0,0,0,1)',
+            inline: true,
+            align: 'left',
+            container: ".corner"
+        }).on('change', function(e) {
+            console.log(e);
+        });
+    });
+</script>

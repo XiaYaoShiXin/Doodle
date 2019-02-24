@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="doodle-id" content="<%= id %>">
+    <title id="title">
+        <%= title %>
+    </title>
+
+
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+        
+        #title {
+            display: inline-block;
+            margin: 12px 12px;
+            padding: 0 13px;
+            height: 51px;
+            line-height: 51px;
+            font-size: 24px;
+        }
+        
+        .back-btn {
+            font-size: 24px;
+            text-decoration: none;
+            color: #333333;
+            transition: color .2s linear;
+        }
+        
+        .back-btn:hover {
+            color: black;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../css/brush.css">
+    <link rel="stylesheet" type="text/css" href="../css/icon.css">
+    <link rel="stylesheet" type="text/css" href="../css/toast.css">
+    <link rel="stylesheet" type="text/css" href="../css/loading.css">
+    <link rel="stylesheet" type="text/css" href="../css/canvas.css">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../css/powerange.css">
+</head>
+
+<body>
+    <div class="top-bar">
+        <a class="icon-back back-btn" href="/"></a>
+        <div id="title" contenteditable="true">
+            <%= title %>
+        </div>
+        <button id="saveBtn">保存</button>
+        <button id="removeBtn">删除</button>
+        <button id="downloadBtn">下载</button>
+    </div>
+
+
+    <div id="canvas-container" class="canvas-container ">
+        <canvas id="canvas" style="opacity:1;"></canvas>
+
+        <div id="brush" class="brush"></div>
+    </div>
+
+    <div class="layout-setting-corner">
+        <div class="form-group">
+            <label for="canvas-width">宽度</label>
+            <input class="form-control" id="canvas-width">
+        </div>
+        <div class="form-group">
+            <label for="canvas-height">高度</label>
+            <input class="form-control" id="canvas-height">
+        </div>
+    </div>
+
+
+    <div class="layout-brush-corner">
+        <input id="brush-size" type="text" style="display: none;" />
+    </div>
+
+
+</body>
+
+</html>
+<script src="../js/jquery.js"></script>
+<script src="../js/axios.js"></script>
+<script src="../js/toast.js"></script>
+<script src="../js/brush.js"></script>
+<script src="../js/canvas.js"></script>
+<script src="../js/powerange.js"></script>
+<script src="../js/dragscroll.js"></script>
+<script>
+    brush.init();
+    canvas.init(brush);
+
+
+
+    let elem = document.getElementById('brush-size'); //选择input元素
+    let init = new Powerange(elem, {
+        min: 0,
+        max: 100,
+        start: 10
+    }); //实例化powerange类并且初始化参数
+</script>
